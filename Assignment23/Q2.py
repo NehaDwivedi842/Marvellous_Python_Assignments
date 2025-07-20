@@ -7,7 +7,5 @@ data = {
     'English': [75, 85, 82]
 }
 df = pd.DataFrame(data)
-print("Shape of Data:\n",df.shape)
-print("Columns of Data:\n",df.columns.to_list())
-print(" Data types:\n",df.dtypes)
 
+print(df.describe())

@@ -7,7 +7,8 @@ data = {
     'English': [75, 85, 82]
 }
 df = pd.DataFrame(data)
-print("Shape of Data:\n",df.shape)
-print("Columns of Data:\n",df.columns.to_list())
-print(" Data types:\n",df.dtypes)
 
+
+df['Total'] = df[['Math', 'Science', 'English']].sum(axis=1)
+df_sorted = df.sort_values(by='Total', ascending=False)
+print(df_sorted)
