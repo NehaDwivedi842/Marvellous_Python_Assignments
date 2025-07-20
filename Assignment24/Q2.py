@@ -9,6 +9,7 @@ data = {
 }
 df = pd.DataFrame(data)
 scaler = MinMaxScaler()
-df['Math'] = scaler.fit_transform(df[['Math']])
-
-print(df)
+df['Gender'] = ['Male', 'Male', 'Female']
+print (df)
+df_encoded = pd.get_dummies(df, columns=['Gender'])
+print(df_encoded)

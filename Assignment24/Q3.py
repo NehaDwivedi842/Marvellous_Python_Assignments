@@ -1,5 +1,4 @@
 import pandas as pd 
-from sklearn.preprocessing import MinMaxScaler
 
 data = {
     'Name': ['Amit', 'Sagar', 'Pooja'],
@@ -8,7 +7,7 @@ data = {
     'English': [75, 85, 82]
 }
 df = pd.DataFrame(data)
-scaler = MinMaxScaler()
-df['Math'] = scaler.fit_transform(df[['Math']])
 
-print(df)
+df['Gender'] = ['Male', 'Male', 'Female']
+avg_marks_by_gender = df.groupby('Gender')[['Math', 'Science', 'English']].mean()
+print(avg_marks_by_gender)

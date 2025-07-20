@@ -1,5 +1,5 @@
 import pandas as pd 
-from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt
 
 data = {
     'Name': ['Amit', 'Sagar', 'Pooja'],
@@ -8,7 +8,9 @@ data = {
     'English': [75, 85, 82]
 }
 df = pd.DataFrame(data)
-scaler = MinMaxScaler()
-df['Math'] = scaler.fit_transform(df[['Math']])
 
-print(df)
+
+plt.hist(df['Math'], edgecolor='black')
+plt.title('Histogram of Math Marks')
+plt.xlabel('Math Score (Normalized)')
+plt.show()

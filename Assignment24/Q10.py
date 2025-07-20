@@ -1,5 +1,6 @@
 import pandas as pd 
-from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 data = {
     'Name': ['Amit', 'Sagar', 'Pooja'],
@@ -8,7 +9,7 @@ data = {
     'English': [75, 85, 82]
 }
 df = pd.DataFrame(data)
-scaler = MinMaxScaler()
-df['Math'] = scaler.fit_transform(df[['Math']])
 
-print(df)
+sns.boxplot(x=df['English'])
+plt.title('Boxplot of English Marks')
+plt.show()
